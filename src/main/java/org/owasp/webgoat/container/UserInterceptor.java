@@ -35,7 +35,7 @@ public class UserInterceptor implements HandlerInterceptor {
       if (null != env) {
         String githubClientId =
             env.getProperty("spring.security.oauth2.client.registration.github.client-id");
-        if (null != githubClientId && !githubClientId.equals("dummy")) {
+        if (null != githubClientId && !"dummy".equals(githubClientId)) {
           modelAndView.getModel().put("oauth", Boolean.TRUE);
         }
       } else {
